@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse Player</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-panel">
+      <div class="brand">
+        <span class="brand-mark">♪</span>
+        <div>
+          <p>Pulse</p>
+          <h1>Music Player</h1>
+        </div>
+      </div>
+
+      <form class="search" id="searchForm">
+        <input id="searchInput" type="search" placeholder="Search songs or artists..." autocomplete="off" />
+        <button type="submit" aria-label="Search">Search</button>
+      </form>
+
+      <div class="now-card">
+        <div class="cover-wrap" id="coverWrap">
+          <img id="cover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80" alt="Album cover" />
+        </div>
+
+        <div class="song-meta">
+          <p id="albumName">Ready to play</p>
+          <h2 id="songTitle">Search for a track</h2>
+          <h3 id="artistName">iTunes preview player</h3>
+        </div>
+
+        <div class="progress-area">
+          <div class="time-row">
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+          </div>
+          <input id="progress" type="range" value="0" min="0" max="100" step="0.1" aria-label="Song progress" />
+        </div>
+
+        <div class="controls">
+          <button class="icon-btn" id="prevBtn" aria-label="Previous track">⏮</button>
+          <button class="play-btn" id="playBtn" aria-label="Play or pause">▶</button>
+          <button class="icon-btn" id="nextBtn" aria-label="Next track">⏭</button>
+        </div>
+
+        <div class="volume-control">
+          <span>🔈</span>
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.75" aria-label="Volume" />
+          <span>🔊</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="playlist-panel">
+      <div class="playlist-header">
+        <div>
+          <p>Playlist</p>
+          <h2 id="playlistTitle">Featured tracks</h2>
+        </div>
+        <span id="trackCount">0 songs</span>
+      </div>
+
+      <div id="status" class="status">Loading songs...</div>
+      <ul id="playlist" class="playlist" aria-label="Playlist"></ul>
+    </aside>
+  </main>
+
+  <audio id="audio"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
